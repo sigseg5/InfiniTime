@@ -68,6 +68,13 @@ SettingWatchFace::SettingWatchFace(Pinetime::Applications::DisplayApp* app, Pine
   }
 
   optionsTotal++;
+  cbOption[optionsTotal] = lv_checkbox_create(container1, nullptr);
+  lv_checkbox_set_text_static(cbOption[optionsTotal], " lol_wf");
+  cbOption[optionsTotal]->user_data = this;
+  lv_obj_set_event_cb(cbOption[optionsTotal], event_handler);
+  if (settingsController.GetClockFace() == 3) {
+    lv_checkbox_set_checked(cbOption[optionsTotal], true);
+  }
 }
 
 SettingWatchFace::~SettingWatchFace() {
