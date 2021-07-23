@@ -15,7 +15,7 @@
 #include "WatchFaceDigital.h"
 #include "WatchFaceAnalog.h"
 #include "PineTimeStyle.h"
-#include "lol_wf.h"
+#include "Triangle.h"
 
 using namespace Pinetime::Applications::Screens;
 
@@ -47,12 +47,12 @@ Clock::Clock(DisplayApp* app,
           return PineTimeStyleScreen();
           break;
         case 3:
-          return lol_wf();
+          return Triangle();
           break;
       }
       return WatchFaceDigitalScreen();
     }()} {
-  settingsController.SetAppMenu(3);
+  settingsController.SetAppMenu(0);
 }
 
 Clock::~Clock() {
@@ -94,8 +94,8 @@ std::unique_ptr<Screen> Clock::PineTimeStyleScreen() {
                                                      motionController);
 }
 
-std::unique_ptr<Screen> Clock::lol_wf() {
-  return std::make_unique<Screens::lol_wf>(app,
+std::unique_ptr<Screen> Clock::Triangle() {
+  return std::make_unique<Screens::Triangle>(app,
                                            settingsController,
                                            batteryController);
 }

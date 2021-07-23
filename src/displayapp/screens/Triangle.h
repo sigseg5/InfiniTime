@@ -17,12 +17,12 @@ namespace Pinetime {
   namespace Applications {
     namespace Screens {
 
-      class lol_wf : public Screen {
+      class Triangle: public Screen {
       public:
-        lol_wf(DisplayApp* app,
+        Triangle(DisplayApp* app,
                Controllers::Settings& settingsController,
                Controllers::Battery& batteryController);
-        ~lol_wf() override;
+        ~Triangle() override;
         bool Refresh() override;
 
 //        void OnObjectEvent(lv_obj_t* pObj, lv_event_t i);

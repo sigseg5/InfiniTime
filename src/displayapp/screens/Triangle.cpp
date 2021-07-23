@@ -1,4 +1,4 @@
-#include "lol_wf.h"
+#include "Triangle.h"
 
 #include <date/date.h>
 #include <lvgl/lvgl.h>
@@ -17,7 +17,7 @@
 
 using namespace Pinetime::Applications::Screens;
 
-lol_wf::lol_wf(DisplayApp* app,
+Triangle::Triangle(DisplayApp* app,
                Controllers::Settings& settingsController,
                Controllers::Battery& batteryController)
   : Screen(app),
@@ -31,11 +31,11 @@ lol_wf::lol_wf(DisplayApp* app,
 
 }
 
-lol_wf::~lol_wf() {
+Triangle::~Triangle() {
   lv_obj_clean(lv_scr_act());
 }
 
-bool lol_wf::Refresh() {
+bool Triangle::Refresh() {
 //  batteryPercentRemaining = batteryController.PercentRemaining();
 //  if (batteryPercentRemaining.IsUpdated()) {
 //    auto batteryPercent = batteryPercentRemaining.Get();
